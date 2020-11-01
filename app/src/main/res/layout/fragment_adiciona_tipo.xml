@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layoutPai"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D7E8A7">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="414dp"
+        android:layout_height="793dp"
+        android:background="@drawable/fundo_adcionarr"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/title"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/caixinha_code"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="300dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:hint="Code"
+            android:outlineSpotShadowColor="@color/colorTexto"
+            android:textColorHint="@color/colorTexto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_code"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Code (Ex: Agua)"
+                android:textColor="@color/colorTexto"
+                android:textColorHint="@color/colorAccent" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/caixinha_descricao"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="300dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:hint="Descrição"
+            android:outlineSpotShadowColor="@color/colorTexto"
+            android:textColorHint="@color/colorTexto"
+            app:layout_constraintEnd_toEndOf="@+id/caixinha_code"
+            app:layout_constraintHorizontal_bias="0.52"
+            app:layout_constraintStart_toStartOf="@+id/caixinha_code"
+            app:layout_constraintTop_toBottomOf="@+id/caixinha_code">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_descricao"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Descrição (Ex: Conta de Agua)"
+                android:textColor="@color/colorAccent"
+                android:textColorHint="@color/colorAccent" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_cores"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/button"
+            app:layout_constraintEnd_toEndOf="@+id/caixinha_descricao"
+            app:layout_constraintStart_toStartOf="@+id/caixinha_descricao"
+            app:layout_constraintTop_toBottomOf="@+id/caixinha_descricao">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:fontFamily="sans-serif"
+                android:text="Escolha uma cor"
+                android:textColor="@color/colorTexto"
+                android:textIsSelectable="false"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/cor_preta"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:background="#7D7D7D"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+            <View
+                android:id="@+id/cor_azul"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:background="#7D7DFF"
+                app:layout_constraintBottom_toBottomOf="@+id/cor_preta"
+                app:layout_constraintStart_toEndOf="@+id/cor_preta"
+                app:layout_constraintTop_toTopOf="@+id/cor_preta" />
+
+            <View
+                android:id="@+id/cor_azul_claro"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="#80BDDE"
+                app:layout_constraintBottom_toBottomOf="@+id/cor_azul"
+                app:layout_constraintEnd_toStartOf="@+id/cor_verde"
+                app:layout_constraintStart_toEndOf="@+id/cor_azul"
+                app:layout_constraintTop_toTopOf="@+id/cor_azul" />
+
+            <View
+                android:id="@+id/cor_verde"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginRight="40dp"
+                android:background="#81B2AD"
+                app:layout_constraintBottom_toBottomOf="@+id/cor_azul_claro"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/cor_azul_claro" />
+
+            <View
+                android:id="@+id/cor_verde_claro"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="#85FF7D"
+                app:layout_constraintBottom_toBottomOf="@+id/cor_vermelho"
+                app:layout_constraintEnd_toStartOf="@+id/cor_amarelo"
+                app:layout_constraintStart_toEndOf="@+id/cor_vermelho"
+                app:layout_constraintTop_toTopOf="@+id/cor_vermelho" />
+
+            <View
+                android:id="@+id/cor_amarelo"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:background="#F3FF7D"
+                app:layout_constraintBottom_toBottomOf="@+id/cor_verde_claro"
+                app:layout_constraintEnd_toEndOf="@+id/cor_verde"
+                app:layout_constraintTop_toTopOf="@+id/cor_verde_claro" />
+
+            <View
+                android:id="@+id/cor_rosa"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="#F67DFF"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/cor_preta"
+                app:layout_constraintTop_toBottomOf="@+id/cor_preta"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <View
+                android:id="@+id/cor_vermelho"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:background="#FF7D7D"
+                app:layout_constraintBottom_toBottomOf="@+id/cor_rosa"
+                app:layout_constraintStart_toEndOf="@+id/cor_rosa"
+                app:layout_constraintTop_toTopOf="@+id/cor_rosa" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_icone"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/button"
+            app:layout_constraintEnd_toEndOf="@+id/layout_cores"
+            app:layout_constraintStart_toStartOf="@+id/layout_cores"
+            app:layout_constraintTop_toBottomOf="@+id/layout_cores">
+
+            <TextView
+                android:id="@+id/txtIcone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:fontFamily="sans-serif"
+                android:text="Escolha um ícone"
+                android:textColor="@color/colorTexto"
+                android:textIsSelectable="false"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ic_phone"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/ic_phone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtIcone" />
+
+            <ImageView
+                android:id="@+id/ic_agua"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:background="@drawable/ic_agua"
+                app:layout_constraintBottom_toBottomOf="@+id/ic_phone"
+                app:layout_constraintStart_toEndOf="@+id/ic_phone"
+                app:layout_constraintTop_toTopOf="@+id/ic_phone"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/ic_energia"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/ic_energia"
+                app:layout_constraintBottom_toBottomOf="@+id/ic_agua"
+                app:layout_constraintEnd_toStartOf="@+id/ic_home"
+                app:layout_constraintStart_toEndOf="@+id/ic_agua"
+                app:layout_constraintTop_toTopOf="@+id/ic_agua"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/ic_seguro"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginRight="16dp"
+                android:background="@drawable/ic_seguro_carro"
+                app:layout_constraintBottom_toBottomOf="@+id/ic_internet"
+                app:layout_constraintEnd_toStartOf="@+id/ic_netflix"
+                app:layout_constraintStart_toEndOf="@+id/ic_internet"
+                app:layout_constraintTop_toTopOf="@+id/ic_internet"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/ic_carro"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/ic_carro"
+                app:layout_constraintBottom_toBottomOf="@+id/ic_energia"
+                app:layout_constraintStart_toStartOf="@+id/ic_phone"
+                app:layout_constraintTop_toBottomOf="@+id/ic_phone"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/ic_internet"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:background="@drawable/ic_internet"
+                app:layout_constraintBottom_toBottomOf="@+id/ic_carro"
+                app:layout_constraintStart_toEndOf="@+id/ic_carro"
+                app:layout_constraintTop_toTopOf="@+id/ic_carro"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/ic_netflix"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/ic_netflix"
+                app:layout_constraintBottom_toBottomOf="@+id/ic_seguro"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ic_seguro"
+                app:layout_constraintVertical_bias="1.0" />
+
+            <ImageView
+                android:id="@+id/ic_home"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/ic_homw"
+                app:layout_constraintBottom_toBottomOf="@+id/ic_energia"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/ic_energia"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/ic_spotify"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/ic_spotify"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/ic_carro"
+                app:layout_constraintTop_toBottomOf="@+id/ic_carro" />
+
+            <ImageView
+                android:id="@+id/ic_tv"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:background="@drawable/ic_tv"
+                app:layout_constraintBottom_toBottomOf="@+id/ic_spotify"
+                app:layout_constraintStart_toEndOf="@+id/ic_spotify"
+                app:layout_constraintTop_toTopOf="@+id/ic_spotify"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <ImageView
+                android:id="@+id/ic_conta"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginLeft="24dp"
+                android:background="@drawable/ic_conta"
+                app:layout_constraintBottom_toBottomOf="@+id/ic_tv"
+                app:layout_constraintStart_toEndOf="@+id/ic_tv"
+                app:layout_constraintTop_toTopOf="@+id/ic_tv"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_adiciona"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:layout_width="150dp"
+            android:layout_height="64dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:fontFamily="sans-serif"
+            android:text="Adicionar"
+            android:textColor="@color/colorAccentDark"
+            android:textSize="18sp"
+            app:backgroundTint="@android:color/transparent"
+            app:cornerRadius="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/layout_icone"
+            app:rippleColor="#5938CDBD"
+            app:strokeColor="@color/colorAccentDark"
+            app:strokeWidth="2dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
+

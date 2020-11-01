@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Comprovante</string>
+    <string name="PREFS_FILENAME">com.teamtreehouse.colorsarefun.prefs</string>
+
+</resources>

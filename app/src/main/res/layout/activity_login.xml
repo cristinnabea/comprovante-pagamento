@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context=".ui.activity.LoginActivity">
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_fundoo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tabLayout"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tabIndicatorColor="#80D8FF"
+            app:tabRippleColor="#7EB6B0"
+            app:tabSelectedTextColor="#E8DB95"
+            app:tabTextColor="@color/colorWhite">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/entrar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/ic_entrar"
+                android:text="entrar" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/cadastro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:icon="@drawable/ic_novo_usuario"
+                android:text="cadastro" />
+        </com.google.android.material.tabs.TabLayout>
+
+        <!-- LOGIN -->
+        <!-- LOGIN -->
+        <!-- LOGIN -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_entrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/caixinha_usuario"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="300dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:hint="E-mail"
+                android:outlineSpotShadowColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                app:layout_constraintEnd_toEndOf="@+id/layout_entrar"
+                app:layout_constraintStart_toStartOf="@+id/layout_entrar"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_usuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="E-mail"
+                    android:textColor="@color/colorWhite" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/caixinha_senha"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="300dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:hint="Senha"
+                android:outlineSpotShadowColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                app:layout_constraintEnd_toEndOf="@+id/caixinha_usuario"
+                app:layout_constraintStart_toStartOf="@+id/caixinha_usuario"
+                app:layout_constraintTop_toBottomOf="@+id/caixinha_usuario"
+                app:passwordToggleDrawable="@drawable/ic_password"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/colorWhite">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_senha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textColor="@color/colorWhite" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_login"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="150dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginRight="12dp"
+                android:fontFamily="sans-serif"
+                android:text="Entrar"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                app:backgroundTint="@android:color/transparent"
+                app:cornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/caixinha_senha"
+                app:rippleColor="#595EEDDE"
+                app:strokeColor="@color/colorWhite"
+                app:strokeWidth="2dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- CADASTRO -->
+        <!-- CADASTRO -->
+        <!-- CADASTRO -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_cadastro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tabLayout">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/caixinha_cadastro_nome"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="300dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginTop="16dp"
+                android:hint="Nome"
+                android:outlineSpotShadowColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                app:layout_constraintEnd_toEndOf="@+id/layout_cadastro"
+                app:layout_constraintStart_toStartOf="@+id/layout_cadastro"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_cadastro_nome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nome"
+                    android:textColor="@color/colorWhite" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/caixinha_cadastro_sobrenome"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="300dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:hint="Sobrenome"
+                android:outlineSpotShadowColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                app:layout_constraintEnd_toEndOf="@+id/caixinha_cadastro_nome"
+                app:layout_constraintStart_toStartOf="@+id/caixinha_cadastro_nome"
+                app:layout_constraintTop_toBottomOf="@+id/caixinha_cadastro_nome">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_cadastro_sobrenome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Sobrenome"
+                    android:textColor="@color/colorWhite" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/caixinha_cadastro_email"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="300dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:hint="E-mail"
+                android:outlineSpotShadowColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                app:layout_constraintEnd_toEndOf="@+id/caixinha_cadastro_sobrenome"
+                app:layout_constraintStart_toStartOf="@+id/caixinha_cadastro_sobrenome"
+                app:layout_constraintTop_toBottomOf="@+id/caixinha_cadastro_sobrenome">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_cadastro_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="E-mail"
+                    android:textColor="@color/colorWhite" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/caixinha_cadastro_email_confirmar"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="300dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:hint="E-mail novamente"
+                android:outlineSpotShadowColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                app:layout_constraintEnd_toEndOf="@+id/caixinha_cadastro_email"
+                app:layout_constraintStart_toStartOf="@+id/caixinha_cadastro_email"
+                app:layout_constraintTop_toBottomOf="@+id/caixinha_cadastro_email">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_cadastro_email_confirmar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="E-mail novamente"
+                    android:textColor="@color/colorWhite" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/caixinha_cadastro_senha"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="300dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:hint="Senha"
+                android:outlineSpotShadowColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                app:layout_constraintEnd_toEndOf="@+id/caixinha_cadastro_email_confirmar"
+                app:layout_constraintStart_toStartOf="@+id/caixinha_cadastro_email_confirmar"
+                app:layout_constraintTop_toBottomOf="@+id/caixinha_cadastro_email_confirmar"
+                app:passwordToggleDrawable="@drawable/ic_password"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/colorWhite">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_cadastro_senha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textColor="@color/colorWhite" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/caixinha_cadastro_senha_novamente"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="300dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="4dp"
+                android:hint="Senha novamente"
+                android:outlineSpotShadowColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                app:layout_constraintEnd_toEndOf="@+id/caixinha_cadastro_senha"
+                app:layout_constraintStart_toStartOf="@+id/caixinha_cadastro_senha"
+                app:layout_constraintTop_toBottomOf="@+id/caixinha_cadastro_senha"
+                app:passwordToggleDrawable="@drawable/ic_password"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/colorWhite">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/edit_cadastro_senha_novamente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Senha novamente"
+                    android:inputType="textPassword"
+                    android:textColor="@color/colorWhite" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cadastro"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="150dp"
+                android:layout_height="64dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginRight="12dp"
+                android:fontFamily="sans-serif"
+                android:text="cadastro"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                app:backgroundTint="@android:color/transparent"
+                app:cornerRadius="5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/caixinha_cadastro_senha_novamente"
+                app:rippleColor="#595EEDDE"
+                app:strokeColor="@color/colorWhite"
+                app:strokeWidth="2dp" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

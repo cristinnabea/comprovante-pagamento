@@ -22,6 +22,6 @@ interface tipoDao {
         fun insertAll(vararg tipos: Tipo)
 
         @Delete
-        fun delete(tipo: Tipo)
+        fun delete(tipos: Tipo)
 
 }

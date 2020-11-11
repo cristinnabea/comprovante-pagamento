@@ -1,18 +1,24 @@
 package com.example.comprovante.ui.adapter
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
+import android.content.DialogInterface
 import android.graphics.Color
+import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
+import androidx.room.Room
 import com.example.comprovante.R
+import com.example.comprovante.database.AppDatabase
 import com.example.comprovante.model.Tipo
 import com.example.comprovante.ui.fragment.ListarContaFragment
 import kotlinx.android.synthetic.main.item_lista_tipo.view.*
@@ -42,15 +48,7 @@ class ListarTipoAdapter(
 
         val list = lista[position]
 
-//        if (list.icone == "sem icone" || list.icone == "null") {
-//
-//        } else {
-//            val drawable1 = ContextCompat.getDrawable(
-//                context,
-//                context.resources.getIdentifier(list.icone, "drawable", context.getPackageName())
-//            )
-//            view.imgSeta.setImageDrawable(drawable1)
-//        }
+//        val listConta = Conta
 
         view.txt_mes_conta.text = list.code
         view.txtDetalhe.text = list.descricao
@@ -61,7 +59,7 @@ class ListarTipoAdapter(
             val listaConta = ListarContaFragment()
 
             val args = Bundle()
-            args.putSerializable("item" , list)
+            args.putSerializable("item", list)
 
             listaConta.arguments = args
             val transaction =
@@ -71,7 +69,49 @@ class ListarTipoAdapter(
             transaction.commit()
         }
 
+        view.fundo2.setOnLongClickListener {
+            val builder = AlertDialog.Builder(context)
+            builder.setMessage("Deseja realmente excluir?")
+                .setPositiveButton("Sim",
+                    DialogInterface.OnClickListener { dialog, id ->
+                        val db = Room.databaseBuilder(
+                            context,
+                            AppDatabase::class.java, "tipo"
+                        ).build()
+
+                        AsyncTask.execute {
+
+                            getItem(position)
+
+                            var listaTipoDelete = db.tipoDao().delete(list)
+
+                            var listaTipo = db.tipoDao().getAll()
+
+
+
+
+                            //atualizaLista()
+
+
+                            var a = "aaaaa"
+
+                        }
+                    })
+                .setNegativeButton("Não",
+                    DialogInterface.OnClickListener { dialog, id ->
+                        // User cancelled the dialog
+                    })
+            // Create the AlertDialog object and return it
+            builder.create()
+            builder.show()
+
+            return@setOnLongClickListener true
+        }
+
 
         return view
     }
+
+
+
 }

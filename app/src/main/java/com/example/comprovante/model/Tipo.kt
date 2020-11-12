@@ -10,7 +10,7 @@ class Tipo(
     val code: String,
     val descricao: String,
     val cor: String,
-    val icone: String = "ic_conta"
+    val icone: String? //= "ic_conta"
 ) : Serializable
 
 

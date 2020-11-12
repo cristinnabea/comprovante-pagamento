@@ -34,7 +34,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imgSeta"
+                android:id="@+id/imgIcone"
                 android:layout_width="46dp"
                 android:layout_height="53dp"
 
@@ -57,9 +57,9 @@
                 android:text="Tipo da conta"
                 android:textColor="@color/colorTexto"
                 android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="@+id/imgSeta"
-                app:layout_constraintStart_toEndOf="@+id/imgSeta"
-                app:layout_constraintTop_toTopOf="@+id/imgSeta"
+                app:layout_constraintBottom_toBottomOf="@+id/imgIcone"
+                app:layout_constraintStart_toEndOf="@+id/imgIcone"
+                app:layout_constraintTop_toTopOf="@+id/imgIcone"
                 app:layout_constraintVertical_bias="0.20" />
 
             <TextView
@@ -71,7 +71,7 @@
                 android:text="Descricão"
                 android:textColor="@color/colorTexto"
                 android:textSize="16dp"
-                app:layout_constraintStart_toEndOf="@+id/imgSeta"
+                app:layout_constraintStart_toEndOf="@+id/imgIcone"
                 app:layout_constraintStart_toStartOf="@+id/txt_mes_conta"
                 app:layout_constraintTop_toBottomOf="@+id/txt_mes_conta" />
 

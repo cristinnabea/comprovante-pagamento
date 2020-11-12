@@ -1,5 +1,6 @@
 package com.example.comprovante.ui.fragment
 
+import android.graphics.BitmapFactory
 import android.graphics.Color
 import android.graphics.PorterDuff
 import android.os.AsyncTask
@@ -15,6 +16,7 @@ import com.example.comprovante.R
 import com.example.comprovante.database.AppDatabase
 import com.example.comprovante.model.Tipo
 import com.example.comprovante.utils.Prefs
+import com.example.comprovante.utils.encodeImage
 import kotlinx.android.synthetic.main.fragment_adiciona_tipo.*
 import kotlinx.android.synthetic.main.fragment_adiciona_tipo.view.*
 
@@ -34,6 +36,7 @@ class AdcTipoFragment : Fragment() {
         var corEscolhida = ""
         var iconEscolhido = ""
         var iconeEscolhido = view.ic_phone
+        var convert : String? = ""
 
         view.cor_preta.setOnClickListener {
             corEscolhida = "#B2B2B2"
@@ -73,6 +76,7 @@ class AdcTipoFragment : Fragment() {
             iconeEscolhido = view.ic_phone
             mudarCorIcone(iconeEscolhido, view)
             iconEscolhido = "ic_phone"
+            convert = encodeImage(BitmapFactory.decodeResource(context.resources, R.drawable.ic_phone))
         }
 
         view.ic_agua.setOnClickListener {
@@ -80,6 +84,7 @@ class AdcTipoFragment : Fragment() {
             iconeEscolhido = view.ic_agua
             mudarCorIcone(iconeEscolhido, view)
             iconEscolhido = "ic_agua"
+            convert = encodeImage(BitmapFactory.decodeResource(context.resources, R.drawable.ic_agua))
         }
 
         view.ic_carro.setOnClickListener {
@@ -87,7 +92,7 @@ class AdcTipoFragment : Fragment() {
             iconeEscolhido = view.ic_carro
             mudarCorIcone(iconeEscolhido, view)
             iconEscolhido = "ic_carro"
-
+            convert = encodeImage(BitmapFactory.decodeResource(context.resources, R.drawable.ic_carro))
         }
 
         view.ic_conta.setOnClickListener {
@@ -95,7 +100,7 @@ class AdcTipoFragment : Fragment() {
             iconeEscolhido = view.ic_conta
             mudarCorIcone(iconeEscolhido, view)
             iconEscolhido = "ic_conta"
-
+            convert = encodeImage(BitmapFactory.decodeResource(context.resources, R.drawable.ic_conta))
         }
 
         view.ic_energia.setOnClickListener {
@@ -103,6 +108,7 @@ class AdcTipoFragment : Fragment() {
             iconeEscolhido = view.ic_energia
             mudarCorIcone(iconeEscolhido, view)
             iconEscolhido = "ic_energia"
+            convert = encodeImage(BitmapFactory.decodeResource(context.resources, R.drawable.ic_energia))
         }
 
         view.ic_home.setOnClickListener {
@@ -110,6 +116,7 @@ class AdcTipoFragment : Fragment() {
             iconeEscolhido = view.ic_home
             mudarCorIcone(iconeEscolhido, view)
             iconEscolhido = "ic_home"
+            convert = encodeImage(BitmapFactory.decodeResource(context.resources, R.drawable.ic_homw))
         }
 
         view.ic_internet.setOnClickListener {
@@ -117,7 +124,7 @@ class AdcTipoFragment : Fragment() {
             iconeEscolhido = view.ic_internet
             mudarCorIcone(iconeEscolhido, view)
             iconEscolhido = "ic_internet"
-
+            convert = encodeImage(BitmapFactory.decodeResource(context.resources, R.drawable.ic_internet))
         }
 
         view.ic_netflix.setOnClickListener {
@@ -125,7 +132,7 @@ class AdcTipoFragment : Fragment() {
             iconeEscolhido = view.ic_netflix
             mudarCorIcone(iconeEscolhido, view)
             iconEscolhido = "ic_netflix"
-
+            convert = encodeImage(BitmapFactory.decodeResource(context.resources, R.drawable.ic_netflix))
         }
 
         view.ic_seguro.setOnClickListener {
@@ -133,7 +140,7 @@ class AdcTipoFragment : Fragment() {
             iconeEscolhido = view.ic_seguro
             mudarCorIcone(iconeEscolhido, view)
             iconEscolhido = "ic_seguro"
-
+            convert = encodeImage(BitmapFactory.decodeResource(context.resources, R.drawable.ic_seguro_carro))
         }
 
         view.ic_spotify.setOnClickListener {
@@ -141,7 +148,7 @@ class AdcTipoFragment : Fragment() {
             iconeEscolhido = view.ic_spotify
             mudarCorIcone(iconeEscolhido, view)
             iconEscolhido = "ic_spotify"
-
+            convert = encodeImage(BitmapFactory.decodeResource(context.resources, R.drawable.ic_spotify))
         }
 
         view.ic_tv.setOnClickListener {
@@ -149,19 +156,32 @@ class AdcTipoFragment : Fragment() {
             iconeEscolhido = view.ic_tv
             mudarCorIcone(iconeEscolhido, view)
             iconEscolhido = "ic_tv"
-
+            convert = encodeImage(BitmapFactory.decodeResource(context.resources, R.drawable.ic_tv))
         }
 
         view.btn_adiciona.setOnClickListener {
-            val p : Prefs = Prefs(context)
-            iconeEscolhido.background.setColorFilter(Color.parseColor("#000000"), PorterDuff.Mode.SRC_ATOP)
-            p.save("code", edit_code.text.toString(), "descricao", edit_descricao.text.toString(), "cor", corEscolhida, "icone", iconEscolhido)
+//            val p : Prefs = Prefs(context)
+
+            iconeEscolhido.background.setColorFilter(
+                Color.parseColor("#000000"),
+                PorterDuff.Mode.SRC_ATOP
+            )
+//            p.save(
+//                "code",
+//                edit_code.text.toString(),
+//                "descricao",
+//                edit_descricao.text.toString(),
+//                "cor",
+//                corEscolhida,
+//                "icone",
+//                iconEscolhido
+//            )
 
             var tipo = Tipo(
                 code = edit_code.text.toString(),
                 descricao = edit_descricao.text.toString(),
                 cor = corEscolhida,
-                icone = iconEscolhido
+                icone = convert
             )
 
             val db = Room.databaseBuilder(
@@ -186,11 +206,17 @@ class AdcTipoFragment : Fragment() {
     }
 
     private fun mudarCorIconePreto(iconeEscolhido: ImageView, view: View) {
-        iconeEscolhido.background.setColorFilter(Color.parseColor("#000000"), PorterDuff.Mode.SRC_ATOP)
+        iconeEscolhido.background.setColorFilter(
+            Color.parseColor("#000000"),
+            PorterDuff.Mode.SRC_ATOP
+        )
     }
 
     private fun mudarCorIcone(iconeEscolhido: ImageView, view: View) {
-        iconeEscolhido.background.setColorFilter(Color.parseColor("#ff0000"), PorterDuff.Mode.SRC_ATOP)
+        iconeEscolhido.background.setColorFilter(
+            Color.parseColor("#ff0000"),
+            PorterDuff.Mode.SRC_ATOP
+        )
     }
 
     private fun mudarCorLayout(corEscolhida: String, view: View) {

@@ -7,8 +7,10 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import com.example.comprovante.R
 import com.example.comprovante.model.Conta
-import com.example.comprovante.model.Tipo
 import kotlinx.android.synthetic.main.item_conta.view.*
+import kotlinx.android.synthetic.main.item_conta.view.images_conta
+import kotlinx.android.synthetic.main.item_conta.view.imgIcone
+import kotlinx.android.synthetic.main.item_conta.view.txt_mes_conta
 
 class ListarContaAdapter(
     private val lista: List<Conta>,
@@ -34,15 +36,15 @@ class ListarContaAdapter(
 
         view.txt_mes_conta.text = item.data
 
-        view.imgSeta.setOnClickListener {
+        view.layoutPai.setOnClickListener {
             if (guarda) {
                 guarda = false
                 view.images_conta.visibility = View.GONE
-                view.imgSeta.rotation = 0f
+                view.imgIcone.rotation = 0f
             } else {
                 guarda = true
                 view.images_conta.visibility = View.VISIBLE
-                view.imgSeta.rotation = 180.0f
+                view.imgIcone.rotation = 180.0f
             }
         }
 

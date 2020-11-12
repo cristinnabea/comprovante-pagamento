@@ -1,7 +1,6 @@
 package com.example.comprovante.ui.adapter
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.content.Context
 import android.content.DialogInterface
 import android.graphics.Color
@@ -12,7 +11,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +19,7 @@ import com.example.comprovante.R
 import com.example.comprovante.database.AppDatabase
 import com.example.comprovante.model.Tipo
 import com.example.comprovante.ui.fragment.ListarContaFragment
+import com.example.comprovante.utils.decodeBase64IntoBitmap
 import kotlinx.android.synthetic.main.item_lista_tipo.view.*
 
 
@@ -48,7 +47,11 @@ class ListarTipoAdapter(
 
         val list = lista[position]
 
-//        val listConta = Conta
+
+//        val imageBytes : ByteArray? = Base64.decode(list.icone, Base64.DEFAULT)
+//        val decodedImage = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes?.count()!!)
+        view.imgIcone.setImageBitmap(decodeBase64IntoBitmap(list.icone))
+
 
         view.txt_mes_conta.text = list.code
         view.txtDetalhe.text = list.descricao
@@ -86,8 +89,6 @@ class ListarTipoAdapter(
                             var listaTipoDelete = db.tipoDao().delete(list)
 
                             var listaTipo = db.tipoDao().getAll()
-
-
 
 
                             //atualizaLista()

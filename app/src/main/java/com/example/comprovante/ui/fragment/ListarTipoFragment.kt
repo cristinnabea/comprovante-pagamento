@@ -39,7 +39,8 @@ class ListarTipoFragment : Fragment() {
         val db = Room.databaseBuilder(
             context,
             AppDatabase::class.java, "tipo"
-        ).build()
+        ).fallbackToDestructiveMigration()
+            .build()
 
         AsyncTask.execute {
             var listaTipo = db.tipoDao().getAll()

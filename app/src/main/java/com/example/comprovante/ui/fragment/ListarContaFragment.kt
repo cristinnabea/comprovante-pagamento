@@ -14,6 +14,7 @@ import com.example.comprovante.model.Conta
 import com.example.comprovante.model.Tipo
 import com.example.comprovante.ui.adapter.ListarContaAdapter
 import com.example.comprovante.ui.adapter.ListarTipoAdapter
+import com.example.comprovante.utils.decodeBase64IntoBitmap
 import kotlinx.android.synthetic.main.fragment_lista_conta.view.*
 
 class ListarContaFragment : Fragment() {
@@ -34,12 +35,12 @@ class ListarContaFragment : Fragment() {
 
         var arguments = this.arguments
         var tipo = arguments?.getSerializable("item") as Tipo
-
-        val drawable1 = ContextCompat.getDrawable(
-            context,
-            context.resources.getIdentifier(tipo.icone, "drawable", context.getPackageName())
-        )
-        view.img_cabecalho.setImageDrawable(drawable1)
+//
+//        val drawable1 = ContextCompat.getDrawable(
+//            context,
+//            context.resources.getIdentifier(tipo.icone, "drawable", context.getPackageName())
+//        )
+        view.img_cabecalho.setImageBitmap(decodeBase64IntoBitmap(tipo.icone))
         view.txt_item_conta2.text = tipo.code
         view.txt_item_descricao.text = tipo.descricao
         view.constraintLayout2.setBackgroundColor(Color.parseColor(tipo.cor))

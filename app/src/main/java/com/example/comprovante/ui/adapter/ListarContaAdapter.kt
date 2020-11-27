@@ -34,7 +34,7 @@ class ListarContaAdapter(
         val item = lista[position]
         var guarda: Boolean = false
 
-        view.txt_mes_conta.text = item.data
+        view.txt_mes_conta.text = item.dataVencimento
 
         view.layoutPai.setOnClickListener {
             if (guarda) {
@@ -47,6 +47,7 @@ class ListarContaAdapter(
                 view.imgIcone.rotation = 180.0f
             }
         }
+
 
         return view
     }

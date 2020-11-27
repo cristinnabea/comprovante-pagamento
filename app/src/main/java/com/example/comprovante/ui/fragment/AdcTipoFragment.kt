@@ -23,9 +23,6 @@ import kotlinx.android.synthetic.main.fragment_adiciona_tipo.view.*
 
 class AdcTipoFragment : Fragment() {
 
-    val PREFS_FILENAME = "com.teamtreehouse.colorsarefun.prefs"
-//    private var iconeEscolhido : ImageView = TODO()
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
